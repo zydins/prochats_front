@@ -12,4 +12,9 @@ extension UIColor {
     class func barColor() -> UIColor {
         return UIColor(red: 61.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1.0)
     }
+    
+    
+    class func menuColor() -> UIColor {
+        return UIColor(red: 110.0/255, green: 94.0/255, blue: 189.0/255, alpha: 1.0)
+    }
 }
