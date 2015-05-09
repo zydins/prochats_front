@@ -10,9 +10,9 @@
 		54574B9CE6C44C2368ECA9D7 /* libPods-prochats.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E51AFD2D017D3D714DD7F47B /* libPods-prochats.a */; };
 		7E2713CC1AFE4C3C003D0B24 /* UIColor+ApplicationColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2713CB1AFE4C3C003D0B24 /* UIColor+ApplicationColor.swift */; };
 		7E2713CF1AFE542A003D0B24 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2713CE1AFE542A003D0B24 /* ChatTableViewCell.swift */; };
+		A5546B2A1AFE67DF00CF8419 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5546B291AFE67DF00CF8419 /* ChatViewController.swift */; };
 		A5A91FDA1AFE438D002FDB4B /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A91FD91AFE438D002FDB4B /* ChatsTableViewController.swift */; };
 		A5A91FDC1AFE454D002FDB4B /* ChatsNavigController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A91FDB1AFE454D002FDB4B /* ChatsNavigController.swift */; };
-		A5A91FDE1AFE467F002FDB4B /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A91FDD1AFE467F002FDB4B /* ChatTableViewController.swift */; };
 		A5F458CC1AFE22850074D907 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F458CB1AFE22850074D907 /* AppDelegate.swift */; };
 		A5F458D11AFE22850074D907 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F458CF1AFE22850074D907 /* Main.storyboard */; };
 		A5F458D31AFE22850074D907 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F458D21AFE22850074D907 /* Images.xcassets */; };
@@ -24,9 +24,9 @@
 		7E2713CB1AFE4C3C003D0B24 /* UIColor+ApplicationColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ApplicationColor.swift"; sourceTree = "<group>"; };
 		7E2713CE1AFE542A003D0B24 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		A50397E51AFE2A5500A8FA2D /* prochats-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "prochats-Bridging-Header.h"; sourceTree = "<group>"; };
+		A5546B291AFE67DF00CF8419 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		A5A91FD91AFE438D002FDB4B /* ChatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
 		A5A91FDB1AFE454D002FDB4B /* ChatsNavigController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsNavigController.swift; sourceTree = "<group>"; };
-		A5A91FDD1AFE467F002FDB4B /* ChatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
 		A5F458C61AFE22850074D907 /* prochats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = prochats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F458CA1AFE22850074D907 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5F458CB1AFE22850074D907 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +55,7 @@
 				A5A91FD91AFE438D002FDB4B /* ChatsTableViewController.swift */,
 				A5A91FDB1AFE454D002FDB4B /* ChatsNavigController.swift */,
 				7E2713CE1AFE542A003D0B24 /* ChatTableViewCell.swift */,
+				A5546B291AFE67DF00CF8419 /* ChatViewController.swift */,
 			);
 			name = "Chats View Controller";
 			sourceTree = "<group>";
@@ -95,7 +96,6 @@
 				A5F458D21AFE22850074D907 /* Images.xcassets */,
 				A5F458D41AFE22850074D907 /* LaunchScreen.xib */,
 				A5F458C91AFE22850074D907 /* Supporting Files */,
-				A5A91FDD1AFE467F002FDB4B /* ChatTableViewController.swift */,
 				7E2713CB1AFE4C3C003D0B24 /* UIColor+ApplicationColor.swift */,
 			);
 			path = prochats;
@@ -226,9 +226,9 @@
 				7E2713CC1AFE4C3C003D0B24 /* UIColor+ApplicationColor.swift in Sources */,
 				A5F458CC1AFE22850074D907 /* AppDelegate.swift in Sources */,
 				A5A91FDC1AFE454D002FDB4B /* ChatsNavigController.swift in Sources */,
+				A5546B2A1AFE67DF00CF8419 /* ChatViewController.swift in Sources */,
 				7E2713CF1AFE542A003D0B24 /* ChatTableViewCell.swift in Sources */,
 				A5A91FDA1AFE438D002FDB4B /* ChatsTableViewController.swift in Sources */,
-				A5A91FDE1AFE467F002FDB4B /* ChatTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

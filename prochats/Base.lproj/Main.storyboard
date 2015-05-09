@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YjH-os-J38">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YjH-os-J38">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -324,44 +324,23 @@
             </objects>
             <point key="canvasLocation" x="1705" y="1687"/>
         </scene>
-        <!--Title-->
-        <scene sceneID="b23-6v-scZ">
+        <!--Chat View Controller-->
+        <scene sceneID="Ejg-Y5-Ynh">
             <objects>
-                <tableViewController storyboardIdentifier="ChatTableViewController" id="Jku-Jt-f9m" customClass="ChatTableViewController" customModule="prochats" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hQe-2l-Kcz">
+                <viewController storyboardIdentifier="ChatViewController" id="8VL-lb-8B7" customClass="ChatViewController" customModule="prochats" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hjQ-Qu-zuD"/>
+                        <viewControllerLayoutGuide type="bottom" id="BAf-kW-iYI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oHP-XM-nHG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pOT-jg-iNT">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pOT-jg-iNT" id="1Jk-cl-e5N">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Jku-Jt-f9m" id="XxV-yh-tDi"/>
-                            <outlet property="delegate" destination="Jku-Jt-f9m" id="D2k-lD-VAp"/>
-                        </connections>
-                    </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="rvH-5A-07D"/>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Title" id="Upa-D6-W08">
-                        <barButtonItem key="leftBarButtonItem" title="back" id="5mR-Lo-Y9T">
-                            <connections>
-                                <action selector="backToChats:" destination="Jku-Jt-f9m" id="F5w-9V-9xj"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5D5-Mo-80X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wVV-nA-TV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2713.5" y="1687.5"/>
+            <point key="canvasLocation" x="2624" y="1687"/>
         </scene>
         <!--Chats Navig Controller-->
         <scene sceneID="Bim-5T-Ngk">

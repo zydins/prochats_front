@@ -8,3 +8,4 @@
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <SWRevealViewController/SWRevealViewController.h>
+#import <JSQMessagesViewController/JSQMessages.h>
