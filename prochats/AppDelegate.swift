@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var logged: Bool = false
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -24,6 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         attributes[NSFontAttributeName] = UIFont(name: "Helvetica Neue", size: 18)
         UINavigationBar.appearance().titleTextAttributes = attributes
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+//        if (!logged) {
+//            var storyboard = UIStoryboard(name: "MainStoryboard", bundle: nil)
+//            application.windows[0].rootViewController =
+//                storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+//        }
         return true
     }
 

@@ -14,6 +14,9 @@
 		A5546B2A1AFE67DF00CF8419 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5546B291AFE67DF00CF8419 /* ChatViewController.swift */; };
 		A5A91FDA1AFE438D002FDB4B /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A91FD91AFE438D002FDB4B /* ChatsTableViewController.swift */; };
 		A5A91FDC1AFE454D002FDB4B /* ChatsNavigController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A91FDB1AFE454D002FDB4B /* ChatsNavigController.swift */; };
+		A5DAD5EE1AFE7519002F9285 /* ChatSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD5ED1AFE7519002F9285 /* ChatSettingsViewController.swift */; };
+		A5DAD5F01AFE84D1002F9285 /* ChatOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD5EF1AFE84D1002F9285 /* ChatOptionTableViewCell.swift */; };
+		A5DAD5F81AFEA49A002F9285 /* HashtagsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD5F71AFEA49A002F9285 /* HashtagsTableViewController.swift */; };
 		A5F458CC1AFE22850074D907 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F458CB1AFE22850074D907 /* AppDelegate.swift */; };
 		A5F458D11AFE22850074D907 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F458CF1AFE22850074D907 /* Main.storyboard */; };
 		A5F458D31AFE22850074D907 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F458D21AFE22850074D907 /* Images.xcassets */; };
@@ -29,6 +32,9 @@
 		A5546B291AFE67DF00CF8419 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		A5A91FD91AFE438D002FDB4B /* ChatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
 		A5A91FDB1AFE454D002FDB4B /* ChatsNavigController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsNavigController.swift; sourceTree = "<group>"; };
+		A5DAD5ED1AFE7519002F9285 /* ChatSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatSettingsViewController.swift; sourceTree = "<group>"; };
+		A5DAD5EF1AFE84D1002F9285 /* ChatOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatOptionTableViewCell.swift; sourceTree = "<group>"; };
+		A5DAD5F71AFEA49A002F9285 /* HashtagsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashtagsTableViewController.swift; sourceTree = "<group>"; };
 		A5F458C61AFE22850074D907 /* prochats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = prochats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F458CA1AFE22850074D907 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5F458CB1AFE22850074D907 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +64,9 @@
 				A5A91FDB1AFE454D002FDB4B /* ChatsNavigController.swift */,
 				7E2713CE1AFE542A003D0B24 /* ChatTableViewCell.swift */,
 				A5546B291AFE67DF00CF8419 /* ChatViewController.swift */,
+				A5DAD5ED1AFE7519002F9285 /* ChatSettingsViewController.swift */,
+				A5DAD5EF1AFE84D1002F9285 /* ChatOptionTableViewCell.swift */,
+				A5DAD5F71AFEA49A002F9285 /* HashtagsTableViewController.swift */,
 			);
 			name = "Chats View Controller";
 			sourceTree = "<group>";
@@ -238,8 +247,11 @@
 				7E2713D21AFE5F15003D0B24 /* MenuTableViewController.swift in Sources */,
 				A5F458CC1AFE22850074D907 /* AppDelegate.swift in Sources */,
 				A5A91FDC1AFE454D002FDB4B /* ChatsNavigController.swift in Sources */,
+				A5DAD5F01AFE84D1002F9285 /* ChatOptionTableViewCell.swift in Sources */,
 				A5546B2A1AFE67DF00CF8419 /* ChatViewController.swift in Sources */,
+				A5DAD5F81AFEA49A002F9285 /* HashtagsTableViewController.swift in Sources */,
 				7E2713CF1AFE542A003D0B24 /* ChatTableViewCell.swift in Sources */,
+				A5DAD5EE1AFE7519002F9285 /* ChatSettingsViewController.swift in Sources */,
 				A5A91FDA1AFE438D002FDB4B /* ChatsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

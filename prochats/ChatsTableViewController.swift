@@ -35,12 +35,15 @@ class ChatsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        self.navigationItem.title = "Pro Chats"
+        self.navigationItem.title = "Сообщения"
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
     }
 
+    override func viewWillAppear(animated: Bool) {
+        self.navigationItem.title = "Сообщения"
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

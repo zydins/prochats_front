@@ -12,16 +12,36 @@ class ChatViewController: JSQMessagesViewController {
 
     var messages = [JSQMessage]()
     var avatars = Dictionary<String, JSQMessagesAvatarImage>()
-    let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 10/255, green: 180/255, blue: 230/255, alpha: 1.0))
+    let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor.menuColor())
     let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.barColor())
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController!.navigationBar.topItem!.title = "";
+        self.inputToolbar.contentView.leftBarButtonItem = nil
         automaticallyScrollsToMostRecentMessage = true
-        self.title = "Чат"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Поиск", style: UIBarButtonItemStyle.Plain, target: self, action: "search")
+        
+        var titleLabelButton = UIButton()
+        titleLabelButton.setTitle("Чат", forState:UIControlState.Normal)
+        titleLabelButton.frame = CGRectMake(0, 0, 70, 44)
+        titleLabelButton.addTarget(self, action:"openSettings", forControlEvents:UIControlEvents.TouchUpInside)
+        self.navigationItem.titleView = titleLabelButton;
+
+        
+        
         senderId = "1"
         senderDisplayName = "Sergey"
+    }
+    
+    func openSettings() {
+        let chatViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ChatSettingsViewController") as! ChatSettingsViewController
+        self.navigationController?.showViewController(chatViewController, sender: self)
+    }
+    
+    func search() {
+        let hashtagsTableViewController = self.storyboard?.instantiateViewControllerWithIdentifier("HashtagsTableViewController") as! HashtagsTableViewController
+        self.navigationController?.showViewController(hashtagsTableViewController, sender: self)
     }
 
     override func didReceiveMemoryWarning() {
