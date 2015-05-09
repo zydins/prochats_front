@@ -13,7 +13,7 @@ class ChatViewController: JSQMessagesViewController {
     var messages = [JSQMessage]()
     var avatars = Dictionary<String, JSQMessagesAvatarImage>()
     let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 10/255, green: 180/255, blue: 230/255, alpha: 1.0))
-    let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.lightGrayColor())
+    let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.barColor())
     
     
     override func viewDidLoad() {
@@ -42,7 +42,17 @@ class ChatViewController: JSQMessagesViewController {
             text:text)
         
         messages.append(message)
+        
+        var message2 = JSQMessage(senderId: "2",
+            senderDisplayName:"GOSHA",
+            date:date,
+            text:"норм")
+        
+        messages.append(message2)
+        
+        
         finishSendingMessageAnimated(true)
+        
     }
     
     func setupAvatarImage(name: String, imageUrl: String?, incoming: Bool) {
@@ -65,15 +75,11 @@ class ChatViewController: JSQMessagesViewController {
     func setupAvatarColor(name: String, incoming: Bool) {
         let diameter = incoming ? UInt(collectionView.collectionViewLayout.incomingAvatarViewSize.width) : UInt(collectionView.collectionViewLayout.outgoingAvatarViewSize.width)
         
-        let rgbValue = name.hash
-        let r = CGFloat(Float((rgbValue & 0xFF0000) >> 16)/255.0)
-        let g = CGFloat(Float((rgbValue & 0xFF00) >> 8)/255.0)
-        let b = CGFloat(Float(rgbValue & 0xFF)/255.0)
-        let color = UIColor(red: r, green: g, blue: b, alpha: 0.5)
+        let color = UIColor.barColor()
         
         let nameLength = count(name)
-        let initials : String? = name.substringToIndex(advance(senderDisplayName.startIndex, min(3, nameLength)))
-        let userImage = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials(initials, backgroundColor: color, textColor: UIColor.blackColor(), font: UIFont.systemFontOfSize(CGFloat(13)), diameter: diameter)
+        let initials : String? = name.substringToIndex(advance(senderDisplayName.startIndex, min(1, nameLength)))
+        let userImage = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials(initials, backgroundColor: color, textColor: UIColor.whiteColor(), font: UIFont.systemFontOfSize(CGFloat(13)), diameter: diameter)
         
         avatars[name] = userImage
     }

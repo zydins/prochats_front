@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         attributes[NSForegroundColorAttributeName] = UIColor.whiteColor()
         attributes[NSFontAttributeName] = UIFont(name: "Helvetica Neue", size: 18)
         UINavigationBar.appearance().titleTextAttributes = attributes
-        
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         return true
     }
 
