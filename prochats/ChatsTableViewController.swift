@@ -74,7 +74,7 @@ class ChatsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let chatViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ChatTableViewController") as! ChatTableViewController
+        let chatViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ChatViewController") as! ChatViewController
         self.navigationController?.showViewController(chatViewController, sender: self)
     }
 }
