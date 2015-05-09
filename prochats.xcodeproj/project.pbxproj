@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		54574B9CE6C44C2368ECA9D7 /* libPods-prochats.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E51AFD2D017D3D714DD7F47B /* libPods-prochats.a */; };
+		7E2713CC1AFE4C3C003D0B24 /* UIColor+ApplicationColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2713CB1AFE4C3C003D0B24 /* UIColor+ApplicationColor.swift */; };
+		7E2713CF1AFE542A003D0B24 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2713CE1AFE542A003D0B24 /* ChatTableViewCell.swift */; };
 		A5A91FDA1AFE438D002FDB4B /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A91FD91AFE438D002FDB4B /* ChatsTableViewController.swift */; };
 		A5A91FDC1AFE454D002FDB4B /* ChatsNavigController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A91FDB1AFE454D002FDB4B /* ChatsNavigController.swift */; };
 		A5A91FDE1AFE467F002FDB4B /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A91FDD1AFE467F002FDB4B /* ChatTableViewController.swift */; };
@@ -15,21 +17,12 @@
 		A5F458D11AFE22850074D907 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F458CF1AFE22850074D907 /* Main.storyboard */; };
 		A5F458D31AFE22850074D907 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F458D21AFE22850074D907 /* Images.xcassets */; };
 		A5F458D61AFE22850074D907 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5F458D41AFE22850074D907 /* LaunchScreen.xib */; };
-		A5F458E21AFE22850074D907 /* prochatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F458E11AFE22850074D907 /* prochatsTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A5F458DC1AFE22850074D907 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5F458BE1AFE22850074D907 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A5F458C51AFE22850074D907;
-			remoteInfo = prochats;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		16FE63BC5650EDAA5FBE4C0E /* Pods-prochats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prochats.release.xcconfig"; path = "Pods/Target Support Files/Pods-prochats/Pods-prochats.release.xcconfig"; sourceTree = "<group>"; };
+		7E2713CB1AFE4C3C003D0B24 /* UIColor+ApplicationColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ApplicationColor.swift"; sourceTree = "<group>"; };
+		7E2713CE1AFE542A003D0B24 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		A50397E51AFE2A5500A8FA2D /* prochats-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "prochats-Bridging-Header.h"; sourceTree = "<group>"; };
 		A5A91FD91AFE438D002FDB4B /* ChatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
 		A5A91FDB1AFE454D002FDB4B /* ChatsNavigController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsNavigController.swift; sourceTree = "<group>"; };
@@ -40,9 +33,6 @@
 		A5F458D01AFE22850074D907 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5F458D21AFE22850074D907 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A5F458D51AFE22850074D907 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		A5F458DB1AFE22850074D907 /* prochatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = prochatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5F458E01AFE22850074D907 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5F458E11AFE22850074D907 /* prochatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prochatsTests.swift; sourceTree = "<group>"; };
 		E51AFD2D017D3D714DD7F47B /* libPods-prochats.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-prochats.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCE168A9B7ED1A29376D048 /* Pods-prochats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prochats.debug.xcconfig"; path = "Pods/Target Support Files/Pods-prochats/Pods-prochats.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,16 +46,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5F458D81AFE22850074D907 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E2713CD1AFE52B1003D0B24 /* Chats View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5A91FD91AFE438D002FDB4B /* ChatsTableViewController.swift */,
+				A5A91FDB1AFE454D002FDB4B /* ChatsNavigController.swift */,
+				7E2713CE1AFE542A003D0B24 /* ChatTableViewCell.swift */,
+			);
+			name = "Chats View Controller";
+			sourceTree = "<group>";
+		};
 		90F5AB23C5502796D7AF8E57 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				A5F458C81AFE22850074D907 /* prochats */,
-				A5F458DE1AFE22850074D907 /* prochatsTests */,
 				A5F458C71AFE22850074D907 /* Products */,
 				90F5AB23C5502796D7AF8E57 /* Pods */,
 				FC08285644AAB57201050035 /* Frameworks */,
@@ -90,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				A5F458C61AFE22850074D907 /* prochats.app */,
-				A5F458DB1AFE22850074D907 /* prochatsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,15 +89,14 @@
 		A5F458C81AFE22850074D907 /* prochats */ = {
 			isa = PBXGroup;
 			children = (
+				7E2713CD1AFE52B1003D0B24 /* Chats View Controller */,
 				A5F458CB1AFE22850074D907 /* AppDelegate.swift */,
 				A5F458CF1AFE22850074D907 /* Main.storyboard */,
 				A5F458D21AFE22850074D907 /* Images.xcassets */,
 				A5F458D41AFE22850074D907 /* LaunchScreen.xib */,
 				A5F458C91AFE22850074D907 /* Supporting Files */,
-				A50397E51AFE2A5500A8FA2D /* prochats-Bridging-Header.h */,
-				A5A91FD91AFE438D002FDB4B /* ChatsTableViewController.swift */,
-				A5A91FDB1AFE454D002FDB4B /* ChatsNavigController.swift */,
 				A5A91FDD1AFE467F002FDB4B /* ChatTableViewController.swift */,
+				7E2713CB1AFE4C3C003D0B24 /* UIColor+ApplicationColor.swift */,
 			);
 			path = prochats;
 			sourceTree = "<group>";
@@ -114,24 +104,8 @@
 		A5F458C91AFE22850074D907 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A50397E51AFE2A5500A8FA2D /* prochats-Bridging-Header.h */,
 				A5F458CA1AFE22850074D907 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A5F458DE1AFE22850074D907 /* prochatsTests */ = {
-			isa = PBXGroup;
-			children = (
-				A5F458E11AFE22850074D907 /* prochatsTests.swift */,
-				A5F458DF1AFE22850074D907 /* Supporting Files */,
-			);
-			path = prochatsTests;
-			sourceTree = "<group>";
-		};
-		A5F458DF1AFE22850074D907 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A5F458E01AFE22850074D907 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -166,24 +140,6 @@
 			productReference = A5F458C61AFE22850074D907 /* prochats.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A5F458DA1AFE22850074D907 /* prochatsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A5F458E81AFE22850074D907 /* Build configuration list for PBXNativeTarget "prochatsTests" */;
-			buildPhases = (
-				A5F458D71AFE22850074D907 /* Sources */,
-				A5F458D81AFE22850074D907 /* Frameworks */,
-				A5F458D91AFE22850074D907 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A5F458DD1AFE22850074D907 /* PBXTargetDependency */,
-			);
-			name = prochatsTests;
-			productName = prochatsTests;
-			productReference = A5F458DB1AFE22850074D907 /* prochatsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -195,10 +151,6 @@
 				TargetAttributes = {
 					A5F458C51AFE22850074D907 = {
 						CreatedOnToolsVersion = 6.3.1;
-					};
-					A5F458DA1AFE22850074D907 = {
-						CreatedOnToolsVersion = 6.3.1;
-						TestTargetID = A5F458C51AFE22850074D907;
 					};
 				};
 			};
@@ -216,7 +168,6 @@
 			projectRoot = "";
 			targets = (
 				A5F458C51AFE22850074D907 /* prochats */,
-				A5F458DA1AFE22850074D907 /* prochatsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -229,13 +180,6 @@
 				A5F458D11AFE22850074D907 /* Main.storyboard in Resources */,
 				A5F458D61AFE22850074D907 /* LaunchScreen.xib in Resources */,
 				A5F458D31AFE22850074D907 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5F458D91AFE22850074D907 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,30 +223,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E2713CC1AFE4C3C003D0B24 /* UIColor+ApplicationColor.swift in Sources */,
 				A5F458CC1AFE22850074D907 /* AppDelegate.swift in Sources */,
 				A5A91FDC1AFE454D002FDB4B /* ChatsNavigController.swift in Sources */,
+				7E2713CF1AFE542A003D0B24 /* ChatTableViewCell.swift in Sources */,
 				A5A91FDA1AFE438D002FDB4B /* ChatsTableViewController.swift in Sources */,
 				A5A91FDE1AFE467F002FDB4B /* ChatTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5F458D71AFE22850074D907 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A5F458E21AFE22850074D907 /* prochatsTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A5F458DD1AFE22850074D907 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A5F458C51AFE22850074D907 /* prochats */;
-			targetProxy = A5F458DC1AFE22850074D907 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A5F458CF1AFE22850074D907 /* Main.storyboard */ = {
@@ -431,40 +361,6 @@
 			};
 			name = Release;
 		};
-		A5F458E91AFE22850074D907 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = prochatsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/prochats.app/prochats";
-			};
-			name = Debug;
-		};
-		A5F458EA1AFE22850074D907 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = prochatsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/prochats.app/prochats";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -482,15 +378,6 @@
 			buildConfigurations = (
 				A5F458E61AFE22850074D907 /* Debug */,
 				A5F458E71AFE22850074D907 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A5F458E81AFE22850074D907 /* Build configuration list for PBXNativeTarget "prochatsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A5F458E91AFE22850074D907 /* Debug */,
-				A5F458EA1AFE22850074D907 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

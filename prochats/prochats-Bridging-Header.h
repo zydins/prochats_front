@@ -6,4 +6,5 @@
 //  Copyright (c) 2015 Creators. All rights reserved.
 //
 
+#import <SDWebImage/UIImageView+WebCache.h>
 #import <SWRevealViewController/SWRevealViewController.h>

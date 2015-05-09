@@ -3,8 +3,6 @@
 
 target "prochats" do
     pod 'SWRevealViewController', '~> 2.3.0'
+    pod 'SDWebImage'
 end
 
-target "prochatsTests" do
-
-end
