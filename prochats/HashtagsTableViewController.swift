@@ -17,6 +17,7 @@ class HashtagsTableViewController: UITableViewController, UIAlertViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addHashtag")
+        self.navigationItem.title = "Темы"
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -63,7 +64,10 @@ class HashtagsTableViewController: UITableViewController, UIAlertViewDelegate {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        var hashtag = hashtags[indexPath.row]
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("SearchResultViewController") as! SearchResultViewController
+        viewController.setSearchHashtag(hashtag)
+        self.navigationController?.showViewController(viewController, sender: self)
     }
 
     /*

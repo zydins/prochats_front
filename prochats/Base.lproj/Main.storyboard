@@ -350,6 +350,24 @@
             </objects>
             <point key="canvasLocation" x="3390" y="1687"/>
         </scene>
+        <!--Search Result View Controller-->
+        <scene sceneID="kh5-7W-Pwb">
+            <objects>
+                <viewController storyboardIdentifier="SearchResultViewController" id="okz-8j-nph" customClass="SearchResultViewController" customModule="prochats" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tjE-OG-d4z"/>
+                        <viewControllerLayoutGuide type="bottom" id="ibB-Br-w0T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l27-nh-yKQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mEE-bC-nfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3384" y="2388"/>
+        </scene>
         <!--Chats Navig Controller-->
         <scene sceneID="Bim-5T-Ngk">
             <objects>

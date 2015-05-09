@@ -1,55 +1,31 @@
 //
-//  ChatViewController.swift
+//  SearchResultViewController.swift
 //  prochats
 //
-//  Created by Сергей on 09.05.15.
+//  Created by Сергей on 10.05.15.
 //  Copyright (c) 2015 Creators. All rights reserved.
 //
 
 import UIKit
 
-class ChatViewController: JSQMessagesViewController {
-
+class SearchResultViewController: JSQMessagesViewController {
+    
     var messages = [JSQMessage]()
     var avatars = Dictionary<String, JSQMessagesAvatarImage>()
     let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor.menuColor())
     let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.barColor())
-    
+    var hashtag: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController!.navigationBar.topItem!.title = "";
-        self.inputToolbar.contentView.leftBarButtonItem = nil
-        automaticallyScrollsToMostRecentMessage = true
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Поиск", style: UIBarButtonItemStyle.Plain, target: self, action: "search")
-        self.showLoadEarlierMessagesHeader = true
-        
-        var titleLabelButton = UIButton()
-        titleLabelButton.setTitle("Чат", forState:UIControlState.Normal)
-        titleLabelButton.frame = CGRectMake(0, 0, 70, 44)
-        titleLabelButton.addTarget(self, action:"openSettings", forControlEvents:UIControlEvents.TouchUpInside)
-        self.navigationItem.titleView = titleLabelButton;
-
-        
+        self.navigationItem.title = "Результат поиска"
+        self.inputToolbar.removeFromSuperview()
         
         senderId = "1"
         senderDisplayName = "Sergey"
-        
-        for (var i = 0; i < 10; i++) {
-        messages.append(JSQMessage(senderId: "2",
-            senderDisplayName:"Андрюша",
-            date: NSDate(),
-            text:"привет! вот тебе сообщение, чтоб не скучно было"))
-        }
-    }
-    
-    func openSettings() {
-        let chatViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ChatSettingsViewController") as! ChatSettingsViewController
-        self.navigationController?.showViewController(chatViewController, sender: self)
-    }
-    
-    func search() {
-        let hashtagsTableViewController = self.storyboard?.instantiateViewControllerWithIdentifier("HashtagsTableViewController") as! HashtagsTableViewController
-        self.navigationController?.showViewController(hashtagsTableViewController, sender: self)
+        // Do any additional setup after loading the view.
+
+        makeRequest()
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,30 +33,28 @@ class ChatViewController: JSQMessagesViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func backToChat(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+    func setSearchHashtag(hashtag: String) {
+        self.hashtag = hashtag
     }
     
-    override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId sender: String!, senderDisplayName displayName: String!, date: NSDate!) {
-        JSQSystemSoundPlayer.jsq_playMessageSentSound()
-        
+    func makeRequest() {
         var message = JSQMessage(senderId: senderId,
             senderDisplayName:senderDisplayName,
-            date:date,
-            text:text)
+            date:NSDate(),
+            text:"как дела?")
         
         messages.append(message)
         
         var message2 = JSQMessage(senderId: "2",
             senderDisplayName:"GOSHA",
-            date:date,
+            date:NSDate(),
             text:"норм")
         
         messages.append(message2)
         
         
         finishSendingMessageAnimated(true)
-        
+
     }
     
     func setupAvatarImage(name: String, imageUrl: String?, incoming: Bool) {
@@ -174,27 +148,16 @@ class ChatViewController: JSQMessagesViewController {
         
         return kJSQMessagesCollectionViewCellLabelHeightDefault
     }
+
     
-    override func collectionView(collectionView: JSQMessagesCollectionView!, didTapMessageBubbleAtIndexPath indexPath: NSIndexPath!) {
-        NSLog("oooooooo")
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
-    
-    override func collectionView(collectionView: JSQMessagesCollectionView!, header headerView: JSQMessagesLoadEarlierHeaderView!, didTapLoadEarlierMessagesButton sender: UIButton!) {
-        NSLog("jjjjjjj")
-    }
-    
-    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        
-        if (self.showLoadEarlierMessagesHeader && kind == UICollectionElementKindSectionHeader) {
-            var view: JSQMessagesCollectionView = collectionView as! JSQMessagesCollectionView
-            var header: JSQMessagesLoadEarlierHeaderView = view.dequeueLoadEarlierMessagesViewHeaderForIndexPath(indexPath)
-            
-            header.loadButton.titleLabel?.text = "Еще сообщения..."
-            header.loadButton.setTitleColor(UIColor.barColor(), forState: UIControlState.Normal)
-            header.loadButton.titleLabel?.font = UIFont(name: "Helvetica", size: 16)
-           
-            return header;
-        }
-        return super.collectionView(view as! UICollectionView, viewForSupplementaryElementOfKind: kind, atIndexPath: indexPath)
-    }
+    */
+
 }
