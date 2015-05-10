@@ -12,31 +12,6 @@ class ChatsTableViewController: UITableViewController, VKConnnectorProtocol {
     
     var Connector: VKConnector = VKConnector()
     var chats: [Chat] = []
-    
-    let mockData = [
-        [
-            "URL": "http://dummyimage.com/144x144/000/fff",
-            "title": "Вася Петров",
-            "last_message": "не ожидал от тебя такого...",
-            "temp_icon": "",
-            "last_time": "12:32"
-        ],
-        [
-            "URL": "http://dummyimage.com/144x144/647/faf",
-            "title": "Дима Иванов",
-            "last_message": "класс",
-            "temp_icon": "",
-            "last_time": "21:31"
-        ],
-        [
-            "URL": "http://dummyimage.com/144x144/231/aaf",
-            "title": "Чат ТОПОВЫЙ",
-            "last_message": "!!!!! >:3",
-            "temp_icon": "",
-            "last_time": "4:02"
-        ]
-    ]
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,6 +11,7 @@
 		7E2713CC1AFE4C3C003D0B24 /* UIColor+ApplicationColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2713CB1AFE4C3C003D0B24 /* UIColor+ApplicationColor.swift */; };
 		7E2713CF1AFE542A003D0B24 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2713CE1AFE542A003D0B24 /* ChatTableViewCell.swift */; };
 		7E2713D21AFE5F15003D0B24 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2713D11AFE5F15003D0B24 /* MenuTableViewController.swift */; };
+		A543DD8F1AFF079D0077852A /* VKMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543DD8E1AFF079D0077852A /* VKMessage.swift */; };
 		A5546B2A1AFE67DF00CF8419 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5546B291AFE67DF00CF8419 /* ChatViewController.swift */; };
 		A5A91FDA1AFE438D002FDB4B /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A91FD91AFE438D002FDB4B /* ChatsTableViewController.swift */; };
 		A5A91FDC1AFE454D002FDB4B /* ChatsNavigController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A91FDB1AFE454D002FDB4B /* ChatsNavigController.swift */; };
@@ -19,7 +20,6 @@
 		A5DAD5F81AFEA49A002F9285 /* HashtagsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD5F71AFEA49A002F9285 /* HashtagsTableViewController.swift */; };
 		A5DAD5FA1AFEB3CB002F9285 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD5F91AFEB3CB002F9285 /* SearchResultViewController.swift */; };
 		A5DAD6021AFECDAF002F9285 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD6011AFECDAF002F9285 /* AuthViewController.m */; };
-		A5DAD6351AFED38F002F9285 /* Chat.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD6261AFED38F002F9285 /* Chat.m */; };
 		A5DAD6361AFED38F002F9285 /* ConfFile.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD6281AFED38F002F9285 /* ConfFile.m */; };
 		A5DAD6371AFED38F002F9285 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD62A1AFED38F002F9285 /* Constants.m */; };
 		A5DAD6381AFED38F002F9285 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD62D1AFED38F002F9285 /* Message.m */; };
@@ -29,6 +29,8 @@
 		A5DAD63D1AFED65F002F9285 /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5DAD63C1AFED65F002F9285 /* UserData.plist */; };
 		A5DAD63F1AFED820002F9285 /* MyRevealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD63E1AFED820002F9285 /* MyRevealViewController.swift */; };
 		A5DAD6421AFED8AA002F9285 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD6411AFED8AA002F9285 /* StartViewController.m */; };
+		A5DAD6431AFF028B002F9285 /* Chat.h in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD6251AFED38F002F9285 /* Chat.h */; };
+		A5DAD6441AFF028D002F9285 /* Chat.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD6261AFED38F002F9285 /* Chat.m */; };
 		A5F458CC1AFE22850074D907 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F458CB1AFE22850074D907 /* AppDelegate.swift */; };
 		A5F458D11AFE22850074D907 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F458CF1AFE22850074D907 /* Main.storyboard */; };
 		A5F458D31AFE22850074D907 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F458D21AFE22850074D907 /* Images.xcassets */; };
@@ -41,6 +43,7 @@
 		7E2713CE1AFE542A003D0B24 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		7E2713D11AFE5F15003D0B24 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		A50397E51AFE2A5500A8FA2D /* prochats-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "prochats-Bridging-Header.h"; sourceTree = "<group>"; };
+		A543DD8E1AFF079D0077852A /* VKMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKMessage.swift; sourceTree = "<group>"; };
 		A5546B291AFE67DF00CF8419 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		A5A91FD91AFE438D002FDB4B /* ChatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
 		A5A91FDB1AFE454D002FDB4B /* ChatsNavigController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsNavigController.swift; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 				A5DAD6401AFED8AA002F9285 /* StartViewController.h */,
 				A5DAD6411AFED8AA002F9285 /* StartViewController.m */,
 				A5DAD63E1AFED820002F9285 /* MyRevealViewController.swift */,
+				A543DD8E1AFF079D0077852A /* VKMessage.swift */,
 			);
 			name = "Chats View Controller";
 			sourceTree = "<group>";
@@ -310,15 +314,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5DAD6351AFED38F002F9285 /* Chat.m in Sources */,
+				A5DAD6361AFED38F002F9285 /* ConfFile.m in Sources */,
 				7E2713CC1AFE4C3C003D0B24 /* UIColor+ApplicationColor.swift in Sources */,
+				A5DAD6441AFF028D002F9285 /* Chat.m in Sources */,
+				A5DAD6431AFF028B002F9285 /* Chat.h in Sources */,
 				7E2713D21AFE5F15003D0B24 /* MenuTableViewController.swift in Sources */,
 				A5DAD6421AFED8AA002F9285 /* StartViewController.m in Sources */,
 				A5DAD63F1AFED820002F9285 /* MyRevealViewController.swift in Sources */,
 				A5F458CC1AFE22850074D907 /* AppDelegate.swift in Sources */,
 				A5A91FDC1AFE454D002FDB4B /* ChatsNavigController.swift in Sources */,
 				A5DAD6371AFED38F002F9285 /* Constants.m in Sources */,
-				A5DAD6361AFED38F002F9285 /* ConfFile.m in Sources */,
 				A5DAD5F01AFE84D1002F9285 /* ChatOptionTableViewCell.swift in Sources */,
 				A5546B2A1AFE67DF00CF8419 /* ChatViewController.swift in Sources */,
 				A5DAD63B1AFED38F002F9285 /* VKUser.m in Sources */,
@@ -328,6 +333,7 @@
 				A5DAD5FA1AFEB3CB002F9285 /* SearchResultViewController.swift in Sources */,
 				A5DAD6021AFECDAF002F9285 /* AuthViewController.m in Sources */,
 				A5DAD6391AFED38F002F9285 /* MyHttpRequest.m in Sources */,
+				A543DD8F1AFF079D0077852A /* VKMessage.swift in Sources */,
 				A5DAD5EE1AFE7519002F9285 /* ChatSettingsViewController.swift in Sources */,
 				A5DAD63A1AFED38F002F9285 /* VKConnector.m in Sources */,
 				A5A91FDA1AFE438D002FDB4B /* ChatsTableViewController.swift in Sources */,

@@ -149,6 +149,8 @@
 }
 
 - (void)loadMessages:(int)count {
+    
+    messages = [[NSMutableDictionary alloc] init];
     NSString* params = @"";
     
     if (isGroup)
@@ -183,16 +185,63 @@
             int us = [[dialogDict valueForKey:@"from_id"] integerValue];
             int mesid = [[dialogDict valueForKey:@"mid"] integerValue];
             NSString* body = [dialogDict valueForKey:@"body"];
-            NSDate* date = [NSDate dateWithTimeIntervalSince1970:[[dialogDict valueForKey:date] integerValue]];
+            NSDate* date = [NSDate dateWithTimeIntervalSince1970:[[dialogDict objectForKey:@"date"] doubleValue]];
             Message* ms = [[Message alloc] init:connector sender:[connector getUser:us]
                                            chat:self messId:mesid date:date body:body];
         }
     }
 }
+    
+- (NSArray*) getSortedMessages {
+    NSArray *keysArray;
+    keysArray = [messages keysSortedByValueUsingComparator: ^(Message *obj1, Message *obj2) {
+        if (obj1.date > obj2.date) {
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+        if (obj1.date < obj2.date) {
+                return (NSComparisonResult)NSOrderedAscending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+    }];
+        
+    NSMutableArray *valuesArray = [[NSMutableArray alloc] initWithCapacity:[keysArray count]];
+    for (int i = 0; i < [keysArray count]; i++) {
+        //long key = keysArray[i];
+        Message* ms = messages[keysArray[i]];
+        valuesArray[i] = ms;
+    }
+        
+    return valuesArray;
+}
 
-
-
-
-
+- (int)sendMessage:(NSString*)mess {
+    NSString* params;
+    if (isGroup)
+        params = [NSString stringWithFormat:@"chat_id=%d&message=%@&access_token=%@", chatId, mess, connector.accessToken];
+    else
+        params = [NSString stringWithFormat:@"user_id=56067283&message=%@&access_token=%@", mess, connector.accessToken];
+    
+    Response *resp = [[[MyHttpRequest alloc] init:GET url:MESSAGES_SEND params:params] DoRequest];
+    if (resp.Status == CONNECTION_ERROR)
+    {
+        [connector setConnectionError];
+        resp.Message = @"";
+    }
+    else
+    {
+        NSData *allCoursesData = [resp.Message dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error;
+        NSMutableDictionary *allCourses = [NSJSONSerialization
+                                           JSONObjectWithData:allCoursesData
+                                           options:NSJSONReadingMutableContainers
+                                           error:&error];
+        
+        int mesid = [allCourses valueForKey:@"response"];
+        Message* mes = [[Message alloc] init:connector sender:connector.getMe chat:self messId:mesid date:[NSDate date] body:mess];
+        
+        return mesid;
+    }
+    return -1;
+}
 
 @end

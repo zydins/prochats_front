@@ -9,7 +9,7 @@
 #import "AuthViewController.h"
 //#import "ProChat-api/ConfFile.h"
 //#import "ProChat-api/VKUser.h"
-#import "ProChat-api/Header.h"
+#import "Header.h"
 
 @interface AuthViewController ()
 

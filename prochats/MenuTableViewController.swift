@@ -19,21 +19,23 @@ class MenuTableViewController: UITableViewController, VKConnnectorProtocol {
         ("Выход", "Logout")
     ]
     
+    var me: VKUser?
+    
     @IBOutlet var userPhotoProfile: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var headerView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.me = Connector.getMe()
         self.headerView.backgroundColor = UIColor.menuColor()
         self.view.backgroundColor = UIColor.menuColor()
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
-        self.userPhotoProfile.sd_setImageWithURL(NSURL(string: "https://pp.vk.me/c618319/v618319951/188e9/ZWuMEntaV7w.jpg"))
+        self.userPhotoProfile.sd_setImageWithURL(NSURL(string: me!.imageUrl))
         self.userPhotoProfile.clipsToBounds = true
         self.userPhotoProfile.layer.cornerRadius = self.userPhotoProfile.frame.size.width / 2
-        self.nameLabel.text = "Балабан Александр"
+        self.nameLabel.text = me?.name
     }
 
     override func didReceiveMemoryWarning() {

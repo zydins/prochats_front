@@ -29,7 +29,7 @@
 
 - (void)setData {
     
-    NSString* params = [NSString stringWithFormat:@"user_ids=%d&fields=photo_50&access_token=%@", userId, connector.accessToken];
+    NSString* params = [NSString stringWithFormat:@"user_ids=%d&fields=photo_200&access_token=%@", userId, connector.accessToken];
     
     Response *resp = [[[MyHttpRequest alloc] init:GET url:USER_GET params:params] DoRequest];
     if (resp.Status == CONNECTION_ERROR)
@@ -49,7 +49,7 @@
         NSArray* arr = [allCourses objectForKey:@"response"];
         NSDictionary *userDict = arr[0];
         name = [NSString stringWithFormat:@"%@ %@", [userDict valueForKey:@"first_name"], [userDict valueForKey:@"last_name"]];
-        imageUrl = [userDict valueForKey:@"photo_50"];
+        imageUrl = [userDict valueForKey:@"photo_200"];
 
     }
 }

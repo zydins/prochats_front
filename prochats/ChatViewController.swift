@@ -13,7 +13,7 @@ class ChatViewController: JSQMessagesViewController, VKConnnectorProtocol {
     var Connector: VKConnector = VKConnector()
     var chat: Chat?
     
-    var messages = [JSQMessage]()
+    var messages = [VKMessage]()
     var avatars = Dictionary<String, JSQMessagesAvatarImage>()
     let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor.menuColor())
     let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.barColor())
@@ -38,9 +38,9 @@ class ChatViewController: JSQMessagesViewController, VKConnnectorProtocol {
         senderDisplayName = me.name
         
         chat?.loadMessages(50)
-        var myMessages: [Message] = chat!.messages.allValues as! [Message]
+        var myMessages: [Message] = chat?.getSortedMessages() as! [Message]
         for message in myMessages {
-            var chatMessage = JSQMessage(senderId: NSNumber(int: message.sender.userId).stringValue,
+            var chatMessage = VKMessage(imageUrl: message.sender.imageUrl, senderId: NSNumber(int: message.sender.userId).stringValue,
                 senderDisplayName: message.sender.name,
                 date: message.date,
                 text: message.body)
@@ -74,13 +74,14 @@ class ChatViewController: JSQMessagesViewController, VKConnnectorProtocol {
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId sender: String!, senderDisplayName displayName: String!, date: NSDate!) {
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
         
-        var message = JSQMessage(senderId: senderId,
+        var message = VKMessage(imageUrl: Connector.getMe().imageUrl, senderId: senderId,
             senderDisplayName:senderDisplayName,
             date:date,
             text:text)
         
         messages.append(message)
         
+        chat?.sendMessage(text)
         
         finishSendingMessageAnimated(true)
         
@@ -134,7 +135,7 @@ class ChatViewController: JSQMessagesViewController, VKConnnectorProtocol {
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
         let message = messages[indexPath.item]
-        setupAvatarImage(message.senderDisplayName, imageUrl: (chat!.messages.allValues[indexPath.row] as! Message).sender.imageUrl , incoming: true)
+        setupAvatarImage(message.senderDisplayName, imageUrl: message.imageUrl, incoming: true)
         return avatars[message.senderDisplayName]
         //return nil
     }
@@ -143,9 +144,15 @@ class ChatViewController: JSQMessagesViewController, VKConnnectorProtocol {
     override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForMessageBubbleTopLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
         let message: JSQMessage = messages[indexPath.item];
         
+        
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "hh:mm" //format style. Browse online to get a format that fits your needs.
+        var dateString = dateFormatter.stringFromDate(message.date)
+
+        
         // Sent by me, skip
         if message.senderDisplayName == senderDisplayName {
-            return nil;
+            return NSAttributedString(string:senderDisplayName + " " + dateString)
         }
         
         // Same as previous sender, skip
@@ -156,7 +163,8 @@ class ChatViewController: JSQMessagesViewController, VKConnnectorProtocol {
             }
         }
         
-        return NSAttributedString(string:message.senderDisplayName)
+        
+        return NSAttributedString(string:message.senderDisplayName + " " + dateString)
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
@@ -199,5 +207,12 @@ class ChatViewController: JSQMessagesViewController, VKConnnectorProtocol {
             return header;
         }
         return super.collectionView(view as! UICollectionView, viewForSupplementaryElementOfKind: kind, atIndexPath: indexPath)
+    }
+    
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        var cell: JSQMessagesCollectionViewCell = super.collectionView(collectionView, cellForItemAtIndexPath:indexPath) as! JSQMessagesCollectionViewCell
+        cell.textView.textColor = UIColor.whiteColor()
+        
+        return cell
     }
 }

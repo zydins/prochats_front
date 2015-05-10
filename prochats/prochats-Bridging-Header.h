@@ -9,5 +9,4 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <SWRevealViewController/SWRevealViewController.h>
 #import <JSQMessagesViewController/JSQMessages.h>
-#import "ProChat-api/Header.h"
-#import "ProChat-api/VKConnector.h"
+#import "Header.h"

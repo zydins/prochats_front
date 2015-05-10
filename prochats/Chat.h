@@ -28,6 +28,8 @@
 - (id)init:(VKConnector*)conn chatId:(int)chat isGroup:(BOOL)group;
 - (void)setData;
 - (void)loadMessages:(int)count;
+- (NSArray*)getSortedMessages;
+- (int)sendMessage:(NSString*)mess;
 
 @end
 

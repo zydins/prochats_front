@@ -76,7 +76,7 @@
         
         
         NSArray* arr = [allCourses objectForKey:@"response"];
-        for (int i = 1; i < 5; i++)
+        for (int i = 1; i <= 6; i++)
         {
             NSDictionary *dialogDict = arr[i];
             
@@ -90,6 +90,10 @@
             Chat* tc = [[Chat alloc] init:self chatId:chatId isGroup:isGroup];
         }
     }
+}
+
+- (VKUser*)getMe {
+    return [self getUser:[userId integerValue]];
 }
 
 @end

@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ProChat-api/VKUser.h"
-//#import "ProChat-api/VKConViewControllerProtocol.h"
-#include "ProChat-api/Header.h"
+#include "Header.h"
 
 @interface AuthViewController : UIViewController<VKConnnectorProtocol>
 {

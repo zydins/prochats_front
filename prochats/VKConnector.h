@@ -37,6 +37,7 @@ typedef enum
 - (void)setConnectionError;
 - (void)loadChats;
 - (VKUser*)getUser:(int)usId;
+- (VKUser*)getMe;
 
 @end
 
