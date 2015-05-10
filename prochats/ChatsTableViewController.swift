@@ -8,7 +8,10 @@
 
 import UIKit
 
-class ChatsTableViewController: UITableViewController {
+class ChatsTableViewController: UITableViewController, VKConnnectorProtocol {
+    
+    var Connector: VKConnector = VKConnector()
+    
     let mockData = [
         [
             "URL": "http://dummyimage.com/144x144/000/fff",
@@ -38,6 +41,8 @@ class ChatsTableViewController: UITableViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.navigationItem.title = "Сообщения"
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        Connector = VKConnector()
+        
     }
 
     override func viewWillAppear(animated: Bool) {

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YjH-os-J38">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2LI-jP-ATA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Reveal View Controller-->
+        <!--My Reveal View Controller-->
         <scene sceneID="FHw-bG-8qk">
             <objects>
-                <viewController id="YjH-os-J38" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController id="YjH-os-J38" customClass="MyRevealViewController" customModule="prochats" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LEE-Es-r3J"/>
                         <viewControllerLayoutGuide type="bottom" id="kF9-G9-zNs"/>
@@ -26,7 +26,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIF-Ed-Qsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-139.5" y="1212"/>
+            <point key="canvasLocation" x="-68" y="1300"/>
+        </scene>
+        <!--Start View Controller-->
+        <scene sceneID="20A-J8-ebK">
+            <objects>
+                <viewController id="2LI-jP-ATA" customClass="StartViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n5y-89-nFX"/>
+                        <viewControllerLayoutGuide type="bottom" id="4X4-Xg-ob7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ewj-O4-nRG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="JYm-qS-3my" kind="show" identifier="StartToAuthSegue" id="mrA-kk-wYz"/>
+                        <segue destination="YjH-os-J38" kind="show" identifier="StartToStatusSegue" id="bR7-XV-AGQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f7i-SO-BxI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1662" y="1300"/>
+        </scene>
+        <!--Auth View Controller-->
+        <scene sceneID="0Fs-H9-de3">
+            <objects>
+                <viewController id="JYm-qS-3my" customClass="AuthViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9wz-fu-gjD"/>
+                        <viewControllerLayoutGuide type="bottom" id="FkS-V4-gZs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rgq-r3-0nw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="57N-KH-gdE">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="JYm-qS-3my" id="ydg-W6-T0E"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="browser" destination="57N-KH-gdE" id="DYI-ve-wke"/>
+                        <segue destination="YjH-os-J38" kind="show" identifier="AuthToStatusSegue" id="XGd-55-Rng"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TGq-iA-OPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-906" y="2025"/>
         </scene>
         <!--Menu Table View Controller-->
         <scene sceneID="84Y-OV-HfY">
@@ -386,4 +439,7 @@
             <point key="canvasLocation" x="799.5" y="1687.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bR7-XV-AGQ"/>
+    </inferredMetricsTieBreakers>
 </document>

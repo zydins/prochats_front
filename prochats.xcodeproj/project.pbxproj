@@ -18,6 +18,17 @@
 		A5DAD5F01AFE84D1002F9285 /* ChatOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD5EF1AFE84D1002F9285 /* ChatOptionTableViewCell.swift */; };
 		A5DAD5F81AFEA49A002F9285 /* HashtagsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD5F71AFEA49A002F9285 /* HashtagsTableViewController.swift */; };
 		A5DAD5FA1AFEB3CB002F9285 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD5F91AFEB3CB002F9285 /* SearchResultViewController.swift */; };
+		A5DAD6021AFECDAF002F9285 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD6011AFECDAF002F9285 /* AuthViewController.m */; };
+		A5DAD6351AFED38F002F9285 /* Chat.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD6261AFED38F002F9285 /* Chat.m */; };
+		A5DAD6361AFED38F002F9285 /* ConfFile.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD6281AFED38F002F9285 /* ConfFile.m */; };
+		A5DAD6371AFED38F002F9285 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD62A1AFED38F002F9285 /* Constants.m */; };
+		A5DAD6381AFED38F002F9285 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD62D1AFED38F002F9285 /* Message.m */; };
+		A5DAD6391AFED38F002F9285 /* MyHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD62F1AFED38F002F9285 /* MyHttpRequest.m */; };
+		A5DAD63A1AFED38F002F9285 /* VKConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD6311AFED38F002F9285 /* VKConnector.m */; };
+		A5DAD63B1AFED38F002F9285 /* VKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD6341AFED38F002F9285 /* VKUser.m */; };
+		A5DAD63D1AFED65F002F9285 /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5DAD63C1AFED65F002F9285 /* UserData.plist */; };
+		A5DAD63F1AFED820002F9285 /* MyRevealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD63E1AFED820002F9285 /* MyRevealViewController.swift */; };
+		A5DAD6421AFED8AA002F9285 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DAD6411AFED8AA002F9285 /* StartViewController.m */; };
 		A5F458CC1AFE22850074D907 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F458CB1AFE22850074D907 /* AppDelegate.swift */; };
 		A5F458D11AFE22850074D907 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F458CF1AFE22850074D907 /* Main.storyboard */; };
 		A5F458D31AFE22850074D907 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F458D21AFE22850074D907 /* Images.xcassets */; };
@@ -37,6 +48,28 @@
 		A5DAD5EF1AFE84D1002F9285 /* ChatOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatOptionTableViewCell.swift; sourceTree = "<group>"; };
 		A5DAD5F71AFEA49A002F9285 /* HashtagsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashtagsTableViewController.swift; sourceTree = "<group>"; };
 		A5DAD5F91AFEB3CB002F9285 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		A5DAD6001AFECDAF002F9285 /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
+		A5DAD6011AFECDAF002F9285 /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
+		A5DAD6251AFED38F002F9285 /* Chat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chat.h; sourceTree = "<group>"; };
+		A5DAD6261AFED38F002F9285 /* Chat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chat.m; sourceTree = "<group>"; };
+		A5DAD6271AFED38F002F9285 /* ConfFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfFile.h; sourceTree = "<group>"; };
+		A5DAD6281AFED38F002F9285 /* ConfFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfFile.m; sourceTree = "<group>"; };
+		A5DAD6291AFED38F002F9285 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		A5DAD62A1AFED38F002F9285 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		A5DAD62B1AFED38F002F9285 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		A5DAD62C1AFED38F002F9285 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		A5DAD62D1AFED38F002F9285 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		A5DAD62E1AFED38F002F9285 /* MyHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHttpRequest.h; sourceTree = "<group>"; };
+		A5DAD62F1AFED38F002F9285 /* MyHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHttpRequest.m; sourceTree = "<group>"; };
+		A5DAD6301AFED38F002F9285 /* VKConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKConnector.h; sourceTree = "<group>"; };
+		A5DAD6311AFED38F002F9285 /* VKConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKConnector.m; sourceTree = "<group>"; };
+		A5DAD6321AFED38F002F9285 /* VKConViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKConViewControllerProtocol.h; sourceTree = "<group>"; };
+		A5DAD6331AFED38F002F9285 /* VKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKUser.h; sourceTree = "<group>"; };
+		A5DAD6341AFED38F002F9285 /* VKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKUser.m; sourceTree = "<group>"; };
+		A5DAD63C1AFED65F002F9285 /* UserData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserData.plist; sourceTree = "<group>"; };
+		A5DAD63E1AFED820002F9285 /* MyRevealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRevealViewController.swift; sourceTree = "<group>"; };
+		A5DAD6401AFED8AA002F9285 /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		A5DAD6411AFED8AA002F9285 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
 		A5F458C61AFE22850074D907 /* prochats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = prochats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F458CA1AFE22850074D907 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5F458CB1AFE22850074D907 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +103,11 @@
 				A5DAD5EF1AFE84D1002F9285 /* ChatOptionTableViewCell.swift */,
 				A5DAD5F71AFEA49A002F9285 /* HashtagsTableViewController.swift */,
 				A5DAD5F91AFEB3CB002F9285 /* SearchResultViewController.swift */,
+				A5DAD6001AFECDAF002F9285 /* AuthViewController.h */,
+				A5DAD6011AFECDAF002F9285 /* AuthViewController.m */,
+				A5DAD6401AFED8AA002F9285 /* StartViewController.h */,
+				A5DAD6411AFED8AA002F9285 /* StartViewController.m */,
+				A5DAD63E1AFED820002F9285 /* MyRevealViewController.swift */,
 			);
 			name = "Chats View Controller";
 			sourceTree = "<group>";
@@ -89,6 +127,29 @@
 				16FE63BC5650EDAA5FBE4C0E /* Pods-prochats.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A5DAD6241AFED36F002F9285 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				A5DAD6251AFED38F002F9285 /* Chat.h */,
+				A5DAD6261AFED38F002F9285 /* Chat.m */,
+				A5DAD6271AFED38F002F9285 /* ConfFile.h */,
+				A5DAD6281AFED38F002F9285 /* ConfFile.m */,
+				A5DAD6291AFED38F002F9285 /* Constants.h */,
+				A5DAD62A1AFED38F002F9285 /* Constants.m */,
+				A5DAD62B1AFED38F002F9285 /* Header.h */,
+				A5DAD62C1AFED38F002F9285 /* Message.h */,
+				A5DAD62D1AFED38F002F9285 /* Message.m */,
+				A5DAD62E1AFED38F002F9285 /* MyHttpRequest.h */,
+				A5DAD62F1AFED38F002F9285 /* MyHttpRequest.m */,
+				A5DAD6301AFED38F002F9285 /* VKConnector.h */,
+				A5DAD6311AFED38F002F9285 /* VKConnector.m */,
+				A5DAD6321AFED38F002F9285 /* VKConViewControllerProtocol.h */,
+				A5DAD6331AFED38F002F9285 /* VKUser.h */,
+				A5DAD6341AFED38F002F9285 /* VKUser.m */,
+			);
+			name = api;
 			sourceTree = "<group>";
 		};
 		A5F458BD1AFE22850074D907 = {
@@ -112,6 +173,7 @@
 		A5F458C81AFE22850074D907 /* prochats */ = {
 			isa = PBXGroup;
 			children = (
+				A5DAD6241AFED36F002F9285 /* api */,
 				7E2713D01AFE5EF2003D0B24 /* Menu View Controller */,
 				7E2713CD1AFE52B1003D0B24 /* Chats View Controller */,
 				A5F458CB1AFE22850074D907 /* AppDelegate.swift */,
@@ -120,6 +182,7 @@
 				A5F458D41AFE22850074D907 /* LaunchScreen.xib */,
 				A5F458C91AFE22850074D907 /* Supporting Files */,
 				7E2713CB1AFE4C3C003D0B24 /* UIColor+ApplicationColor.swift */,
+				A5DAD63C1AFED65F002F9285 /* UserData.plist */,
 			);
 			path = prochats;
 			sourceTree = "<group>";
@@ -201,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5F458D11AFE22850074D907 /* Main.storyboard in Resources */,
+				A5DAD63D1AFED65F002F9285 /* UserData.plist in Resources */,
 				A5F458D61AFE22850074D907 /* LaunchScreen.xib in Resources */,
 				A5F458D31AFE22850074D907 /* Images.xcassets in Resources */,
 			);
@@ -246,16 +310,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5DAD6351AFED38F002F9285 /* Chat.m in Sources */,
 				7E2713CC1AFE4C3C003D0B24 /* UIColor+ApplicationColor.swift in Sources */,
 				7E2713D21AFE5F15003D0B24 /* MenuTableViewController.swift in Sources */,
+				A5DAD6421AFED8AA002F9285 /* StartViewController.m in Sources */,
+				A5DAD63F1AFED820002F9285 /* MyRevealViewController.swift in Sources */,
 				A5F458CC1AFE22850074D907 /* AppDelegate.swift in Sources */,
 				A5A91FDC1AFE454D002FDB4B /* ChatsNavigController.swift in Sources */,
+				A5DAD6371AFED38F002F9285 /* Constants.m in Sources */,
+				A5DAD6361AFED38F002F9285 /* ConfFile.m in Sources */,
 				A5DAD5F01AFE84D1002F9285 /* ChatOptionTableViewCell.swift in Sources */,
 				A5546B2A1AFE67DF00CF8419 /* ChatViewController.swift in Sources */,
+				A5DAD63B1AFED38F002F9285 /* VKUser.m in Sources */,
+				A5DAD6381AFED38F002F9285 /* Message.m in Sources */,
 				A5DAD5F81AFEA49A002F9285 /* HashtagsTableViewController.swift in Sources */,
 				7E2713CF1AFE542A003D0B24 /* ChatTableViewCell.swift in Sources */,
 				A5DAD5FA1AFEB3CB002F9285 /* SearchResultViewController.swift in Sources */,
+				A5DAD6021AFECDAF002F9285 /* AuthViewController.m in Sources */,
+				A5DAD6391AFED38F002F9285 /* MyHttpRequest.m in Sources */,
 				A5DAD5EE1AFE7519002F9285 /* ChatSettingsViewController.swift in Sources */,
+				A5DAD63A1AFED38F002F9285 /* VKConnector.m in Sources */,
 				A5A91FDA1AFE438D002FDB4B /* ChatsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

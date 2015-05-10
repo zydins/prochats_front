@@ -8,7 +8,10 @@
 
 import UIKit
 
-class MenuTableViewController: UITableViewController {
+class MenuTableViewController: UITableViewController, VKConnnectorProtocol {
+    
+    var Connector: VKConnector = VKConnector()
+    
     typealias cellData = (title: String, function: String)
     let cells: [cellData] = [
         ("Настройки", "Settings"),
