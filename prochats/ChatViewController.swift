@@ -54,6 +54,7 @@ class ChatViewController: JSQMessagesViewController, VKConnnectorProtocol {
     
     func openSettings() {
         let chatViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ChatSettingsViewController") as! ChatSettingsViewController
+        chatViewController.setCurrentChat(chat!)
         self.navigationController?.showViewController(chatViewController, sender: self)
     }
     
@@ -150,17 +151,17 @@ class ChatViewController: JSQMessagesViewController, VKConnnectorProtocol {
         var dateString = dateFormatter.stringFromDate(message.date)
 
         
-        // Sent by me, skip
-        if message.senderDisplayName == senderDisplayName {
-            return NSAttributedString(string:senderDisplayName + " " + dateString)
-        }
-        
         // Same as previous sender, skip
         if indexPath.item > 0 {
             let previousMessage = messages[indexPath.item - 1];
             if previousMessage.senderDisplayName == message.senderDisplayName {
                 return nil;
             }
+        }
+        
+        // Sent by me, skip
+        if message.senderDisplayName == senderDisplayName {
+            return NSAttributedString(string:senderDisplayName + " " + dateString)
         }
         
         
@@ -170,17 +171,17 @@ class ChatViewController: JSQMessagesViewController, VKConnnectorProtocol {
     override func collectionView(collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
         let message = messages[indexPath.item]
         
-        // Sent by me, skip
-        if message.senderDisplayName == senderDisplayName {
-            return CGFloat(0.0);
-        }
-        
         // Same as previous sender, skip
         if indexPath.item > 0 {
             let previousMessage = messages[indexPath.item - 1];
             if previousMessage.senderDisplayName == message.senderDisplayName {
-                return CGFloat(0.0);
+                return CGFloat(0.0)
             }
+        }
+        
+        // Sent by me, skip
+        if message.senderDisplayName == senderDisplayName {
+            return kJSQMessagesCollectionViewCellLabelHeightDefault
         }
         
         return kJSQMessagesCollectionViewCellLabelHeightDefault

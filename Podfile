@@ -5,5 +5,6 @@ target "prochats" do
     pod 'SWRevealViewController', '~> 2.3.0'
     pod 'SDWebImage'
     pod 'JSQMessagesViewController'
+    pod "AFNetworking", "~> 2.0"
 end
 

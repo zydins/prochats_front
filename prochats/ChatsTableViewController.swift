@@ -16,7 +16,6 @@ class ChatsTableViewController: UITableViewController, VKConnnectorProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        self.navigationItem.title = "Сообщения"
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         Connector.loadChats()
         chats = Connector.chats.allValues as! [Chat]
@@ -24,6 +23,7 @@ class ChatsTableViewController: UITableViewController, VKConnnectorProtocol {
 
     override func viewWillAppear(animated: Bool) {
         self.navigationItem.title = "Сообщения"
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {

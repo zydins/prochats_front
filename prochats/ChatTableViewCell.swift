@@ -47,7 +47,11 @@ class ChatTableViewCell: UITableViewCell {
         }
         
         self.chatTitleLabel.text = chat.name
-        var message: Message = chat.messages.allValues[0] as! Message
+        if (chat.messages.count != 1) {
+            chat.loadMessages(1)
+        } //TODO: refactor
+        var messages: [Message] = chat.getSortedMessages() as! [Message]
+        var message: Message = messages.isEmpty ? Message() : messages[messages.count - 1] as Message
         self.lastMessageLabel.text = message.body
         self.favoriteIcon.sd_setImageWithURL(NSURL(string: "http://dummyimage.com/30x30/000/fff"))
         var dateFormatter = NSDateFormatter()

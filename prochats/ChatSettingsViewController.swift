@@ -8,9 +8,12 @@
 
 import UIKit
 
-class ChatSettingsViewController: UITableViewController {
+class ChatSettingsViewController: UITableViewController, VKConnnectorProtocol {
     
-//    var users = 3
+    var Connector: VKConnector = VKConnector()
+    var chat: Chat?
+    var currentType = 0
+    
     var types = [
         "На lock-экране",
         "В приложении",
@@ -41,11 +44,11 @@ class ChatSettingsViewController: UITableViewController {
         ]
     ]
     
-    var currentType = 0
-    
-    @IBOutlet weak var notificationType: UILabel!
     
     
+    func setCurrentChat(chat: Chat) {
+        self.chat = chat
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,10 +97,21 @@ class ChatSettingsViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell
         switch indexPath.section {
-            case 0: var tempCell = tableView.dequeueReusableCellWithIdentifier("infoCell", forIndexPath: indexPath) as! ChatOptionTableViewCell
-            tempCell.setAvatarByUrl("http://dummyimage.com/120x120/000/fff")
+            case 0:
+                var tempCell = tableView.dequeueReusableCellWithIdentifier("infoCell", forIndexPath: indexPath) as! ChatOptionTableViewCell
+                if (chat!.imageUrl != nil) {
+                    tempCell.setAvatarByUrl(chat!.imageUrl)
+                } else {
+                    let color = UIColor.barColor()
+                    let nameLength = count(chat!.name)
+                    let initials : String? = chat!.name.substringToIndex(advance(chat!.name.startIndex, min(1, nameLength)))
+                    let userImage = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials(initials, backgroundColor: color, textColor: UIColor.whiteColor(), font: UIFont.systemFontOfSize(CGFloat(53)), diameter: UInt(120))
+                     tempCell.imageView!.image = userImage.avatarImage
+                }
+                tempCell.label.text = chat!.name
             cell = tempCell
-        case 1: cell = tableView.dequeueReusableCellWithIdentifier("notificationCell", forIndexPath: indexPath) as! UITableViewCell
+        case 1:
+            cell = tableView.dequeueReusableCellWithIdentifier("notificationCell", forIndexPath: indexPath) as! UITableViewCell
             cell.detailTextLabel?.text = types[currentType]
             case 2:
 //                if (indexPath.row == 0) {

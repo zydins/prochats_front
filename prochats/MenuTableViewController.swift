@@ -73,6 +73,10 @@ class MenuTableViewController: UITableViewController, VKConnnectorProtocol {
         return cell
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
     // MARK: - Auxiliary methods
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
