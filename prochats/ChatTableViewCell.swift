@@ -28,12 +28,31 @@ class ChatTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func setDetails(details: [String: String]) {
-        self.chatImageView.image = nil
-        self.chatImageView.sd_setImageWithURL(NSURL(string: details["URL"]!))
-        self.chatTitleLabel.text = details["title"]!
-        self.lastMessageLabel.text = details["last_message"]!
-        self.favoriteIcon.sd_setImageWithURL(NSURL(string: details["temp_icon"]!))
-        self.lastMessageTimeLabel.text = details["last_time"]!
+    func setDetails(chat: Chat) {
+//        self.chatImageView.image = chat.imageUrl
+        
+        let color = UIColor.barColor()
+        let nameLength = count(chat.name)
+        let initials : String? = chat.name.substringToIndex(advance(chat.name.startIndex, min(1, nameLength)))
+        let userImage = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials(initials, backgroundColor: color, textColor: UIColor.whiteColor(), font: UIFont.systemFontOfSize(CGFloat(53)), diameter: UInt(144))
+        
+        if (chat.imageUrl != nil) {
+            self.chatImageView.sd_setImageWithURL(NSURL(string: chat.imageUrl))
+        } else {
+            let color = UIColor.barColor()
+            let nameLength = count(chat.name)
+            let initials : String? = chat.name.substringToIndex(advance(chat.name.startIndex, min(1, nameLength)))
+            let userImage = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials(initials, backgroundColor: color, textColor: UIColor.whiteColor(), font: UIFont.systemFontOfSize(CGFloat(53)), diameter: UInt(144))
+            self.chatImageView.image = userImage.avatarImage
+        }
+        
+        self.chatTitleLabel.text = chat.name
+        var message: Message = chat.messages.allValues[0] as! Message
+        self.lastMessageLabel.text = message.body
+        self.favoriteIcon.sd_setImageWithURL(NSURL(string: "http://dummyimage.com/30x30/000/fff"))
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "hh:mm" //format style. Browse online to get a format that fits your needs.
+        var dateString = dateFormatter.stringFromDate(message.date)
+        self.lastMessageTimeLabel.text = dateString
     }
 }

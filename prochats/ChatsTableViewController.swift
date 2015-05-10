@@ -11,6 +11,7 @@ import UIKit
 class ChatsTableViewController: UITableViewController, VKConnnectorProtocol {
     
     var Connector: VKConnector = VKConnector()
+    var chats: [Chat] = []
     
     let mockData = [
         [
@@ -35,14 +36,15 @@ class ChatsTableViewController: UITableViewController, VKConnnectorProtocol {
             "last_time": "4:02"
         ]
     ]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.navigationItem.title = "Сообщения"
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
-        Connector = VKConnector()
-        
+        Connector.loadChats()
+        chats = Connector.chats.allValues as! [Chat]
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -69,20 +71,22 @@ class ChatsTableViewController: UITableViewController, VKConnnectorProtocol {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return self.mockData.count
+//        return self.mockData.count
+        return self.chats.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ChatCell", forIndexPath: indexPath) as! ChatTableViewCell
 
-        cell.setDetails(self.mockData[indexPath.row])
+        cell.setDetails(chats[indexPath.row])
 
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let chatViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ChatViewController") as! ChatViewController
+        chatViewController.setCurrentChat(chats[indexPath.row])
         self.navigationController?.showViewController(chatViewController, sender: self)
     }
 }

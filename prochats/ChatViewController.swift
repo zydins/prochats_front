@@ -8,8 +8,11 @@
 
 import UIKit
 
-class ChatViewController: JSQMessagesViewController {
-
+class ChatViewController: JSQMessagesViewController, VKConnnectorProtocol {
+    
+    var Connector: VKConnector = VKConnector()
+    var chat: Chat?
+    
     var messages = [JSQMessage]()
     var avatars = Dictionary<String, JSQMessagesAvatarImage>()
     let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor.menuColor())
@@ -30,16 +33,23 @@ class ChatViewController: JSQMessagesViewController {
         self.navigationItem.titleView = titleLabelButton;
 
         
+        var me: VKUser = Connector.users.allValues[0] as! VKUser
+        senderId = NSNumber(int: me.userId).stringValue
+        senderDisplayName = me.name
         
-        senderId = "1"
-        senderDisplayName = "Sergey"
-        
-        for (var i = 0; i < 10; i++) {
-        messages.append(JSQMessage(senderId: "2",
-            senderDisplayName:"Андрюша",
-            date: NSDate(),
-            text:"привет! вот тебе сообщение, чтоб не скучно было"))
+        chat?.loadMessages(50)
+        var myMessages: [Message] = chat!.messages.allValues as! [Message]
+        for message in myMessages {
+            var chatMessage = JSQMessage(senderId: NSNumber(int: message.sender.userId).stringValue,
+                senderDisplayName: message.sender.name,
+                date: message.date,
+                text: message.body)
+            messages.append(chatMessage)
         }
+    }
+    
+    func setCurrentChat(chat: Chat) {
+        self.chat = chat
     }
     
     func openSettings() {
@@ -70,13 +80,6 @@ class ChatViewController: JSQMessagesViewController {
             text:text)
         
         messages.append(message)
-        
-        var message2 = JSQMessage(senderId: "2",
-            senderDisplayName:"GOSHA",
-            date:date,
-            text:"норм")
-        
-        messages.append(message2)
         
         
         finishSendingMessageAnimated(true)
@@ -131,7 +134,7 @@ class ChatViewController: JSQMessagesViewController {
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
         let message = messages[indexPath.item]
-        setupAvatarImage(message.senderDisplayName, imageUrl: "", incoming: true)
+        setupAvatarImage(message.senderDisplayName, imageUrl: (chat!.messages.allValues[indexPath.row] as! Message).sender.imageUrl , incoming: true)
         return avatars[message.senderDisplayName]
         //return nil
     }
