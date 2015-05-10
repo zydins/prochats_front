@@ -8,22 +8,29 @@
 
 import UIKit
 
-class HashtagsTableViewController: UITableViewController, UIAlertViewDelegate {
+class HashtagsTableViewController: UITableViewController, UIAlertViewDelegate, VKConnnectorProtocol {
     
-    var hashtags = [
-        "учеба", "ахах", "балабаша"
-    ]
+    var Connector: VKConnector = VKConnector()
+    var chat: Chat?
+    var tags: [Tag]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addHashtag")
         self.navigationItem.title = "Темы"
+        
+        chat?.loadTags()
+        tags = chat?.tags.allValues as! [Tag]
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func setCurrentChat(chat: Chat) {
+        self.chat = chat
     }
     
     func addHashtag() {
@@ -34,7 +41,7 @@ class HashtagsTableViewController: UITableViewController, UIAlertViewDelegate {
     
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         var result: String? = alertView.textFieldAtIndex(0)?.text
-        hashtags.append(result!)
+        //add tag
         self.tableView.reloadData()
     }
 
@@ -54,17 +61,17 @@ class HashtagsTableViewController: UITableViewController, UIAlertViewDelegate {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return hashtags.count
+        return tags!.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("hashtagCell", forIndexPath: indexPath) as! UITableViewCell
-        cell.textLabel?.text = hashtags[indexPath.row]
+        cell.textLabel?.text = tags[indexPath.row].name
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var hashtag = hashtags[indexPath.row]
+        var hashtag = tags[indexPath.row]
         let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("SearchResultViewController") as! SearchResultViewController
         viewController.setSearchHashtag(hashtag)
         self.navigationController?.showViewController(viewController, sender: self)

@@ -56,10 +56,13 @@ typedef enum
 @private ReqTypeEnum _type;
 @private NSString* _url;
 @private NSString* _params;
+@private NSMutableDictionary* _headers;
     
 }
 
 -(id)init:(ReqTypeEnum)type url:(NSString *)url params:(NSString *)params;
+-(id)init:(ReqTypeEnum)type url:(NSString *)url params:(NSString *)params headers:(NSMutableDictionary*)head;
+
 
 
 -(Response*) DoRequest;

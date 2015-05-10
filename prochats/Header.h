@@ -17,5 +17,6 @@
 #import "VKConnector.h"
 #import "MyHttpRequest.h"
 #import "Constants.h"
+#import "Tag.h"
 
 #endif

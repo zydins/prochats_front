@@ -36,6 +36,15 @@
     return self;
 }
 
+-(id)init:(ReqTypeEnum)type url:(NSString *)url params:(NSString *)params
+  headers:(NSMutableDictionary*)head {
+    _type = type;
+    _url = url;
+    _params = params;
+    _headers = head;
+    return self;
+}
+
 -(Response*) DoRequest
 {
     if (_type == GET)
@@ -54,11 +63,15 @@
 
 -(Response*) GET_Request
 {
-    
     NSString *url_str = [NSString stringWithFormat:@"%@?%@", _url, _params];
     url_str = [url_str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setHTTPMethod:@"GET"];
+    if (_headers != nil)
+    {
+        [request setAllHTTPHeaderFields:_headers];
+    }
+       // [request setHTTPBody:[_headers dataUsingEncoding:NSUTF8StringEncoding]];
     [request setURL:[NSURL URLWithString:url_str]];
     NSError *error = [[NSError alloc] init];
     NSHTTPURLResponse *responseCode = nil;
@@ -80,17 +93,30 @@
     if ([ans rangeOfString:@"error\":{\"error_code\":"].location == 2)
         return [[Response alloc]init:ERROR message:ans];
     
-   
     
     return [[Response alloc]init:OK message:ans];
 }
 
--(Response*) PUT_Request
+-(Response*) POST_Request
 {
-    return nil;
+    NSString *urlString = _url;
+    NSMutableURLRequest* request= [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:urlString]];
+    
+    [request setHTTPMethod:@"POST"];
+    NSMutableData *postbody = [NSMutableData data];
+    [postbody appendData:[[NSString stringWithFormat:@"%@", _params]
+                          dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:postbody];
+    
+    // Get Response of Your Request
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    NSString *ans = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    return [[Response alloc] init:OK message:ans];
 }
 
--(Response*) POST_Request
+-(Response*) PUT_Request
 {
     return nil;
 }

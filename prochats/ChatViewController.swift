@@ -60,6 +60,7 @@ class ChatViewController: JSQMessagesViewController, VKConnnectorProtocol {
     
     func search() {
         let hashtagsTableViewController = self.storyboard?.instantiateViewControllerWithIdentifier("HashtagsTableViewController") as! HashtagsTableViewController
+        hashtagsTableViewController.setCurrentChat(chat!)
         self.navigationController?.showViewController(hashtagsTableViewController, sender: self)
     }
 

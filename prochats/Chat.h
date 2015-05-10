@@ -11,6 +11,8 @@
 
 #import <Foundation/Foundation.h>
 @class VKConnector;
+@class Message;
+@class VKUser;
 
 @interface Chat : NSObject
 
@@ -24,10 +26,14 @@
 @property NSString* imageUrl;
 
 @property NSMutableDictionary* messages;
+@property NSMutableDictionary* tags;
 
 - (id)init:(VKConnector*)conn chatId:(int)chat isGroup:(BOOL)group;
 - (void)setData;
 - (void)loadMessages:(int)count;
+- (void)loadMessagesForTag;
+- (void)loadTags;
+
 - (NSArray*)getSortedMessages;
 - (int)sendMessage:(NSString*)mess;
 

@@ -18,7 +18,6 @@ typedef enum
     ConnectionError
 } ConnectorReadyEnum;
 
-
 @class ConfFile;
 @class VKUser;
 
@@ -28,12 +27,14 @@ typedef enum
 @property NSMutableDictionary* users;
 @property NSMutableDictionary* chats;
 
+@property NSString *serverToken;
 @property NSString *accessToken;
 @property NSString *userId;
 @property ConfFile *config; //file with accesstoken and userid
 @property ConnectorReadyEnum status;
 
 - (id)init;
+- (void)authServer;
 - (void)setConnectionError;
 - (void)loadChats;
 - (VKUser*)getUser:(int)usId;

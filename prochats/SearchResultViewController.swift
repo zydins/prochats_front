@@ -8,13 +8,14 @@
 
 import UIKit
 
-class SearchResultViewController: JSQMessagesViewController {
+class SearchResultViewController: JSQMessagesViewController, VKConnnectorProtocol {
     
+    var Connector: VKConnector = VKConnector()
     var messages = [JSQMessage]()
     var avatars = Dictionary<String, JSQMessagesAvatarImage>()
     let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor.menuColor())
     let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.barColor())
-    var hashtag: String?
+    var hashtag: Tag!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,25 +34,23 @@ class SearchResultViewController: JSQMessagesViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setSearchHashtag(hashtag: String) {
+    func setSearchHashtag(hashtag: Tag) {
         self.hashtag = hashtag
     }
     
     func makeRequest() {
-        var message = JSQMessage(senderId: senderId,
-            senderDisplayName:senderDisplayName,
-            date:NSDate(),
-            text:"как дела?")
         
-        messages.append(message)
+        var chat = hashtag.chat
+        chat.loadMessagesForTag()
+        var myMessages: [Message] = chat.getSortedMessages() as! [Message]
         
-        var message2 = JSQMessage(senderId: "2",
-            senderDisplayName:"GOSHA",
-            date:NSDate(),
-            text:"норм")
-        
-        messages.append(message2)
-        
+        for message in myMessages {
+            var chatMessage = VKMessage(imageUrl: message.sender.imageUrl, senderId: NSNumber(int: message.sender.userId).stringValue,
+                senderDisplayName: message.sender.name,
+                date: message.date,
+                text: message.body)
+            messages.append(chatMessage)
+        }
         
         finishSendingMessageAnimated(true)
 
